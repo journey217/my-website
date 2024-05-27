@@ -2,61 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
     <link rel="stylesheet" href="../static/style.css">
     <title>Journey Spratt</title>
+    <script>
+
+        function toggleContent() {
+            const button = document.getElementById("dropdown_button");
+            const content = document.getElementById("dropdown-content");
+            if (content.style.maxHeight) {
+                button.classList.remove("hide_button_class");
+                button.classList.add("dropdown_button_class");
+                content.style.maxHeight = null;
+                button.innerText = "View Cumulative Resume";
+            } else {
+                button.classList.remove("dropdown_button_class");
+                button.classList.add("hide_button_class");
+                content.style.maxHeight = content.scrollHeight + "px";
+                button.innerText = "Hide Resume";
+            }
+        }
+
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body id="homepage">
-<div id="header">
-    <img src="../static/website-face.jpg" height="200" width="200">
+<h1 id="header">
+    <img class="journey_image" src="../static/website-face.jpg" alt="Journey Spratt" draggable="false"/>
     <br/>
     Journey Spratt
-    </div>
+    </h1>
 <div id="header-subtext">
-    <p>Computer Science BA, University at Buffalo</p>
-    <p>Email:
-    <a href="mailto:jsprattbusiness@gmail.com">jsprattbusiness@gmail.com</a>
-    </p>
+    <h2 class="font_size">Computer Science BA, University at Buffalo</h2>
+    <h3 class="font_size">Email:
+    <a class="email_link" href="mailto:jsprattbusiness@gmail.com">jsprattbusiness@gmail.com</a>
+    </h3>
     </div>
-<div class="resume">
-    <div class="drop-button">
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    View my Resume
-  </button>
-        </div>
     <br/>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-      <iframe id="google-doc" src="https://docs.google.com/document/d/1Um35q9tWP-m2gFwT-0ARYjRjFG-ikGNbc5z5HoihM44/preview">Resume</iframe>
-  </div>
-</div>
+    <div class="center_div_wrapper">
+        <button id="dropdown_button" type="button" class="dropdown_button_class" onclick="toggleContent()">View Cumulative Resume</button>
+    </div>
+    <div id="dropdown-content" class="dropdown-content">
+        <iframe src="https://docs.google.com/document/d/1Um35q9tWP-m2gFwT-0ARYjRjFG-ikGNbc5z5HoihM44/preview" width="80%" height="800px"></iframe>
     </div>
 <br/>
 <br/>
 <div class="card-deck">
     <div class="card" style="width: 18rem;">
-  <img src="../static/GitHub-logo.png" class="card-img-top" alt="Image">
+  <img src="../static/GitHub-logo.png" class="card-img-top" alt="GitHub Logo" draggable="false">
   <div class="card-body">
     <h5 class="card-title">GitHub</h5>
     <p class="card-text">On this page you'll be able to view the various projects I have worked on.</p>
-    <a href="https://github.com/journey217" class="btn btn-primary">View Github</a>
+      <div class="center_div_wrapper">
+          <button onclick="window.location.assign('https://github.com/journey217')" class="dropdown_button_class">View GitHub</button>
+      </div>
   </div>
 </div>
     <div class="card" style="width: 18rem;">
-  <img src="../static/linkedin-logo.png" class="card-img-top" alt="Image">
+  <img src="../static/linkedin-logo.png" class="card-img-top" alt="Linkedin Logo" draggable="false">
   <div class="card-body">
-    <h5 class="card-title">LinkedIn</h5>
+    <h5 class="card-title">Linkedin</h5>
     <p class="card-text">View my LinkedIn profile to connect with me!</p>
-    <a href="https://www.linkedin.com/in/journey-spratt-247955186/" class="btn btn-primary">View LinkedIn</a>
+      <div class="center_div_wrapper">
+          <button onclick="window.location.assign('https://www.linkedin.com/in/journey-spratt-247955186/')" class="dropdown_button_class">View Linkedin</button>
+      </div>
   </div>
 </div>
     <div class="card" style="width: 18rem;">
-  <img src="../static/YouTube-logo.png" class="card-img-top" alt="Image">
+  <img src="../static/YouTube-logo.png" class="card-img-top" alt="YouTube Logo" draggable="false">
   <div class="card-body">
     <h5 class="card-title">YouTube</h5>
     <p class="card-text">View demo videos of past projects on YouTube.</p>
-    <a href="https://www.youtube.com/channel/UCtWbX2IY8637uHM_FEK7DRw" class="btn btn-primary">View YouTube</a>
+      <div class="center_div_wrapper">
+          <button  onclick="window.location.assign('https://www.youtube.com/channel/UCtWbX2IY8637uHM_FEK7DRw')" class="dropdown_button_class">View YouTube</button>
+      </div>
   </div>
 </div>
 </div>
